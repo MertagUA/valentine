@@ -48,3 +48,7 @@ btn1No.addEventListener("click", () => {
 window.addEventListener("click", () => {
   document.getElementById("song").play();
 });
+
+const mc = () => {
+  window.location.href = "https://www.mcdonalds.com/ua/uk-ua.html";
+};
