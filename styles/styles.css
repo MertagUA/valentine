@@ -37,6 +37,7 @@ body {
 }
 
 .button__yes {
+  color: #000;
   width: 50%;
   height: 35px;
   font-size: 18px;
@@ -46,6 +47,8 @@ body {
 }
 
 .button__no {
+  color: #000;
+
   width: 50%;
   height: 35px;
   font-size: 18px;
@@ -211,14 +214,28 @@ body {
   background: rgba(0, 0, 0, 0.3);
   top: 265px;
   left: -15px;
+  -webkit-animation: scale 3s linear infinite; /* Safari 4.0 - 8.0 */
   animation: scale 3s linear infinite;
+}
+@-webkit-keyframes scale {
+  0%,
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  50% {
+    -webkit-transform: scaleX(0.85);
+    transform: scaleX(0.85);
+  }
 }
 @keyframes scale {
   0%,
   100% {
+    -webkit-transform: scaleX(1);
     transform: scaleX(1);
   }
   50% {
+    -webkit-transform: scaleX(0.85);
     transform: scaleX(0.85);
   }
 }
@@ -370,6 +387,7 @@ input#open {
   top: 180px;
   left: 120px;
   transform: rotate(-45deg);
+  -webkit-animation: beat 0.8s infinite;
   animation: 0.8s beat infinite;
 }
 
@@ -427,6 +445,7 @@ input#open {
   left: 165px;
   box-shadow: -40px 0 #333;
   transform-origin: 50%;
+  -webkit-animation: close 2s infinite;
   animation: close 2s infinite;
 }
 
@@ -441,6 +460,20 @@ input#open {
   }
 }
 
+/* Add vendor-prefixed version for Safari */
+@-webkit-keyframes close {
+  0%,
+  100% {
+    -webkit-transform: scale(1, 0.05);
+    transform: scale(1, 0.05);
+  }
+  5%,
+  95% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+
 @keyframes beat {
   0%,
   40%,
@@ -449,6 +482,21 @@ input#open {
   }
   25%,
   60% {
+    transform: scale(1.1) rotate(-45deg);
+  }
+}
+
+/* Add vendor-prefixed version for Safari */
+@-webkit-keyframes beat {
+  0%,
+  40%,
+  100% {
+    -webkit-transform: scale(1) rotate(-45deg);
+    transform: scale(1) rotate(-45deg);
+  }
+  25%,
+  60% {
+    -webkit-transform: scale(1.1) rotate(-45deg);
     transform: scale(1.1) rotate(-45deg);
   }
 }
